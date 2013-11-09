@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Cascade</id>
+    <version>0.0.2.9</version>
+    <authors>Jens Buechner</authors>
+    <owners>Jens Buechner</owners>
+    <licenseUrl>https://github.com/jbuechner/cascade/wiki/License</licenseUrl>
+    <projectUrl>https://github.com/jbuechner/cascade</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library containing methods to allow method chaining in most of your code.</description>
+    <releaseNotes>Added GetDefaultOrNew extension for types with an parameterless constructor.</releaseNotes>
+    <tags>.NET Method Chaining Extension</tags>
+  </metadata>
+</package>

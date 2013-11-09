@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>lolspeak</id>
+    <version>1.0.0</version>
+    <title>LOLSPEAK</title>
+    <authors>Owen Byrne</authors>
+    <owners>Owen Byrne</owners>
+    <licenseUrl>https://github.com/owenbyrne/seeshahp/blob/master/SeeShahpSolushun/License.txt</licenseUrl>
+    <projectUrl>https://github.com/owenbyrne/seeshahp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>OH HAI! NEEDZ 2 TELL U SUM THINGS.  DIS NUGET FING CHANGEZ HOOMAN WERDZ IN 2 LOLSPEAK &lt;3&lt;3!11!</description>
+    <summary>CHANGEZ HOOMAN WERDZ IN 2 LOLSPEAK</summary>
+    <tags>lol lolcat lolspeak funny silly joke translator language</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+    </dependencies>
+  </metadata>
+</package>

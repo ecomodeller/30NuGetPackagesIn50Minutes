@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AnkitPackage</id>
+    <version>1.5.04</version>
+    <title>Calculator</title>
+    <authors>v-avarma</authors>
+    <owners>v-avarma</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>My package description.</description>
+    <summary>Calculator summary</summary>
+  </metadata>
+</package>

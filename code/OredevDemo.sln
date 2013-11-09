@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{66679D2F-449B-4334-8BC0-ECF40252F785}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetIsAwesome", "NuGetIsAwesome\NuGetIsAwesome.csproj", "{B87A6332-1C6D-4053-B7C7-E01B32A60E57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B87A6332-1C6D-4053-B7C7-E01B32A60E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87A6332-1C6D-4053-B7C7-E01B32A60E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87A6332-1C6D-4053-B7C7-E01B32A60E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87A6332-1C6D-4053-B7C7-E01B32A60E57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

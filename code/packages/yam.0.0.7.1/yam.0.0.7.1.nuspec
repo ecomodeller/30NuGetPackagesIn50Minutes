@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>yam</id>
+    <version>0.0.7.1</version>
+    <title>yam</title>
+    <authors>xiaoyvr</authors>
+    <owners>xiaoyvr</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>yam</description>
+    <copyright>Copyright 2012</copyright>
+    <tags>yam</tags>
+  </metadata>
+</package>

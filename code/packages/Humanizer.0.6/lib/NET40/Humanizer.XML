@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Humanizer</name>
+    </assembly>
+    <members>
+        <member name="T:Humanizer.Configuration.Configurator">
+            <summary>
+            Provides a configuration point for Humanizer
+            </summary>
+        </member>
+        <member name="P:Humanizer.Configuration.Configurator.Formatter">
+            <summary>
+            The formatter to be used
+            </summary>
+        </member>
+        <member name="T:Humanizer.NumberToOrdinalWordsExtension">
+            <summary>
+            Transforms a number into ordinal words; e.g. 1 => first
+            </summary>
+        </member>
+        <member name="M:Humanizer.NumberToOrdinalWordsExtension.ToOrdinalWords(System.Int32)">
+            <summary>
+            1.ToOrdinalWords() -> "first"
+            </summary>
+            <param name="number">Number to be turned to ordinal words</param>
+            <returns></returns>
+        </member>
+        <member name="T:Humanizer.DateHumanizeExtensions">
+            <summary>
+            Humanizes DateTime into human readable sentence
+            </summary>
+        </member>
+        <member name="M:Humanizer.DateHumanizeExtensions.Humanize(System.DateTime,System.Boolean,System.Nullable{System.DateTime})">
+            <summary>
+            Turns the current or provided date into a human readable sentence
+            </summary>
+            <param name="input">The date to be humanized</param>
+            <param name="utcDate">Boolean value indicating whether the date is in UTC or local</param>
+            <param name="dateToCompareAgainst">Date to compare the input against. If null, current date is used as base</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.EnumDehumanizeExtensions.DehumanizeTo``1(System.String)">
+            <summary>
+            Dehumanizes a string into the Enum it was originally Humanized from!
+            </summary>
+            <typeparam name="TTargetEnum">The target enum</typeparam>
+            <param name="input">The string to be converted</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.EnumHumanizeExtensions.Humanize(System.Enum)">
+            <summary>
+            Turns an enum member into a human readable string; e.g. AnonymousUser -> Anonymous user. It also honors DescriptionAttribute data annotation
+            </summary>
+            <param name="input">The enum member to be humanized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.EnumHumanizeExtensions.Humanize(System.Enum,Humanizer.LetterCasing)">
+            <summary>
+            Turns an enum member into a human readable string with the provided casing; e.g. AnonymousUser with Title casing -> Anonymous User. It also honors DescriptionAttribute data annotation
+            </summary>
+            <param name="input">The enum member to be humanized</param>
+            <param name="casing">The casing to use for humanizing the enum member</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.In.TheYear(System.Int32)">
+            <summary>
+            Returns the first of January of the provided year
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.PrepositionsExtensions.AtMidnight(System.DateTime)">
+            <summary>
+            Returns a new instance of DateTime based on the provided date where the time is set to midnight
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.PrepositionsExtensions.AtNoon(System.DateTime)">
+            <summary>
+            Returns a new instance of DateTime based on the provided date where the time is set to noon
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.PrepositionsExtensions.In(System.DateTime,System.Int32)">
+            <summary>
+            Returns a new instance of DateTime based on the provided date where the year is set to the provided year
+            </summary>
+            <param name="date"></param>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Humanizer.Localisation.IFormatter">
+            <summary>
+            Implement this interface if your language has complex rules around dealing with numbers. 
+            For example in Romanian "5 days" is "5 zile", while "24 days" is "24 de zile" and 
+            in Arabic 2 days is يومين not 2 يوم
+            </summary>
+        </member>
+        <member name="M:Humanizer.Localisation.Resources.GetResource(System.String)">
+            <summary>
+            Returns a resource value from a culture specific resource
+            </summary>
+            <param name="resourceKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.NumberToTimeSpanExtensions.Weeks(System.Int32)">
+            <summary>
+            2.Weeks() == new TimeSpan(14, 0, 0, 0)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.NumberToTimeSpanExtensions.Days(System.Int32)">
+            <summary>
+            2.Days() == new TimeSpan(2, 0, 0, 0)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.NumberToTimeSpanExtensions.Hours(System.Int32)">
+            <summary>
+            3.Hours() == new TimeSpan(0, 3, 0, 0)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.NumberToTimeSpanExtensions.Minutes(System.Int32)">
+            <summary>
+            4.Minutes() == new TimeSpan(0, 0, 4, 0) 
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.NumberToTimeSpanExtensions.Seconds(System.Int32)">
+            <summary>
+            5.Seconds() == new TimeSpan(0, 0, 0, 5) 
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.NumberToTimeSpanExtensions.Milliseconds(System.Int32)">
+            <summary>
+            5.Milliseconds() == new TimeSpan(0, 0, 0, 0, 5) 
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Pluralize(System.String)">
+            <summary>
+            Pluralizes the provided input considering irregular words
+            </summary>
+            <param name="word">Word to be pluralized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Singularize(System.String)">
+            <summary>
+            Singularizes the provided input considering irregular words
+            </summary>
+            <param name="word">Word to be singularized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Titleize(System.String)">
+            <summary>
+            Humanizes the input with Title casing
+            </summary>
+            <param name="input">The string to be titleized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Pascalize(System.String)">
+            <summary>
+            By default, pascalize converts strings to UpperCamelCase also removing underscores
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Camelize(System.String)">
+            <summary>
+            Same as Pascalize except that the first character is lower case
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Underscore(System.String)">
+            <summary>
+            Separates the input words with underscore
+            </summary>
+            <param name="input">The string to be underscored</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Ordinalize(System.String)">
+            <summary>
+            Turns a number into an ordinal string used to denote the position in an ordered sequence such as 1st, 2nd, 3rd, 4th.
+            </summary>
+            <param name="numberString">The number, in string, to be ordinalized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Ordinalize(System.Int32)">
+            <summary>
+            Turns a number into an ordinal number used to denote the position in an ordered sequence such as 1st, 2nd, 3rd, 4th.
+            </summary>
+            <param name="number">The number to be ordinalized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.InflectorExtensions.Dasherize(System.String)">
+            <summary>
+            Replaces underscores with dashes in the string
+            </summary>
+            <param name="underscoredWord"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Humanizer.LetterCasing.Title">
+            <summary>
+            SomeString -> Some String
+            </summary>
+        </member>
+        <member name="F:Humanizer.LetterCasing.AllCaps">
+            <summary>
+            SomeString -> SOME STRING
+            </summary>
+        </member>
+        <member name="F:Humanizer.LetterCasing.LowerCase">
+            <summary>
+            SomeString -> some string
+            </summary>
+        </member>
+        <member name="F:Humanizer.LetterCasing.Sentence">
+            <summary>
+            SomeString -> Some string
+            </summary>
+        </member>
+        <member name="M:Humanizer.NumberToWordsExtension.ToWords(System.Int32)">
+            <summary>
+            3501.ToWords() -> "three thousand five hundred and one"
+            </summary>
+            <param name="number">Number to be turned to words</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.StringDehumanizeExtensions.Dehumanize(System.String)">
+            <summary>
+            Dehumanizes a string; e.g. 'some string', 'Some String', 'Some string' -> 'SomeString'
+            </summary>
+            <param name="input">The string to be dehumanized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.StringHumanizeExtensions.Humanize(System.String)">
+            <summary>
+            Humanizes the input string; e.g. Underscored_input_String_is_turned_INTO_sentence -> 'Underscored input String is turned INTO sentence'
+            </summary>
+            <param name="input">The string to be humanized</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.StringHumanizeExtensions.Humanize(System.String,Humanizer.LetterCasing)">
+            <summary>
+            Humanized the input string based on the provided casing
+            </summary>
+            <param name="input">The string to be humanized</param>
+            <param name="casing">The desired casing for the output</param>
+            <returns></returns>
+        </member>
+        <member name="M:Humanizer.StringHumanizeExtensions.ApplyCase(System.String,Humanizer.LetterCasing)">
+            <summary>
+            Changes the casing of the provided input
+            </summary>
+            <param name="input"></param>
+            <param name="casing"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Humanizer.Localisation.TimeSpanPropertyFormat">
+            <summary>
+            Stores a single mapping of a part of the time span (Day, Hour etc.) to its associated
+            formatter method for Zero, Single, Multiple.
+            </summary>
+        </member>
+        <member name="T:Humanizer.TimeSpanHumanizeExtensions">
+            <summary>
+            Humanizes TimeSpan into human readable form
+            </summary>
+        </member>
+        <member name="M:Humanizer.TimeSpanHumanizeExtensions.Humanize(System.TimeSpan)">
+            <summary>
+            Turns a TimeSpan into a human readable form. E.g. 1 day.
+            </summary>
+            <param name="timeSpan"></param>
+            <returns></returns>
+            <remarks>
+            This method chooses the largest part of the TimeSpan (Day, Hour, Minute, Second,
+            Millisecond) and returns only that part.
+            </remarks>
+        </member>
+        <member name="M:Humanizer.TimeSpanHumanizeExtensions.TryFormat(Humanizer.Localisation.TimeSpanPropertyFormat,System.TimeSpan)">
+            <summary>
+            Maps a single property (Day, Hour etc.) of TimeSpan to a formatted string "1 day" etc.
+            </summary>
+            <param name="propertyFormat"></param>
+            <param name="timeSpan"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Humanizer.TimeSpanHumanizeExtensions.FormatParameters">
+            <summary>
+            Gets the elements of the TimeSpan associated with their correct formatter methods
+            in zero, single and multiple forms.
+            </summary>
+        </member>
+    </members>
+</doc>

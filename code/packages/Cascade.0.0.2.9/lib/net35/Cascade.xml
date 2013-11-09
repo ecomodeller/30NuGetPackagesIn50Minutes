@@ -1,0 +1,1587 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cascade</name>
+    </assembly>
+    <members>
+        <member name="T:Cascade.Data.DatabaseObjectExtensions">
+            <summary>
+            The static <i>ObjectExtensions</i> class contains extension methods usable on all types. In difference to <see cref="T:Cascade.ObjectExtensions"/>,
+            this class contains methods that are aware of types used in combination with database related code, like <see cref="T:System.DBNull"/>.
+            </summary>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.ToDbValue(System.Object)">
+            <summary>
+            Returns <see cref="T:System.DBNull"/> for a <c>null</c> value, or the value itself.
+            </summary>
+            <param name="target">The target value to return.</param>
+            <returns>
+            Returns either <see cref="T:System.DBNull"/> is <paramref name="target"/> itself is null, otherwise <paramref name="target"/>.
+            </returns>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbIsNull(System.Object)">
+            <summary>
+            The method checks wether the value is <c>null</c>.
+            </summary>
+            <param name="target">The target value to check.</param>
+            <returns>
+            Returns <c>true</c> if <paramref name="target"/> is either <c>null</c> or <see cref="T:System.DBNull"/>, otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsBoolean(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToBoolean(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsBoolean(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToBoolean(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToBoolean(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsByte(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToByte(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsByte(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToByte(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToByte(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsSByte(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSByte(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsSByte(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToSByte(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSByte(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsChar(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToChar(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsChar(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToChar(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToChar(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsDateTime(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.AsDateTime(System.Object,System.IFormatProvider)"/> method. If <paramref name="target"/> is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsDateTime(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDateTime(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.AsDateTime(System.Object,System.IFormatProvider)"/> method. If <paramref name="target"/> is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsTimeSpan(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.AsTimeSpan(System.Object)"/> method. If <paramref name="target"/> is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsDecimal(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDecimal(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsDecimal(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDecimal(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDecimal(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsDouble(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDouble(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsDouble(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDouble(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDouble(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsSingle(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSingle(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsSingle(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToSingle(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSingle(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsInt16(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt16(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsInt16(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt16(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt16(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsUInt16(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt16(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsUInt16(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt16(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt16(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsInt32(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt32(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsInt32(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt32(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt32(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsUInt32(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt32(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsUInt32(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt32(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt32(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsInt64(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt64(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsInt64(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt64(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt64(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsUInt64(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt64(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsUInt64(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt64(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt64(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsString(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.String"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.String"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToString(System.Object)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="M:Cascade.Data.DatabaseObjectExtensions.DbAsString(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.String"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToString(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.String"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToString(System.Object,System.IFormatProvider)"/>. If <paramref name="target"/>
+            is <see cref="F:System.DBNull.Value"/> <c>null</c> is returned.
+            </remarks>
+        </member>
+        <member name="T:Cascade.DictionaryExtensions">
+            <summary>
+            The static <i>DictionaryExtensions</i> class contains extension methods which are usable on <see cref="T:System.Collections.Generic.IDictionary`2"/> types.
+            </summary>
+        </member>
+        <member name="M:Cascade.DictionaryExtensions.Get``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            The methods returns the value of an dictionary by using its key.
+            </summary>
+            <typeparam name="TKey">Type parameter of the key of the dictionary.</typeparam>
+            <typeparam name="TValue">Type parameter of the value of the dictionary.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="key">The key to get the value out of the dictionary.</param>
+            <returns>
+            Returns the actual dictionary value if the <paramref name="key"/> was found in the dictionary, in any other case the default value of <typeparamref name="TValue"/> is returned.
+            </returns>
+        </member>
+        <member name="M:Cascade.DictionaryExtensions.Get``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})">
+            <summary>
+            The method returns the value of an dictionary by using its key, or if the key is not yet part of the dictionary, using a callback to return and store a value inside the dictionary.
+            </summary>
+            <typeparam name="TKey">Type parameter of the key of the dictionary.</typeparam>
+            <typeparam name="TValue">Type parameter of the value of the dictionary.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="key">The key to get the value out of the dictionary. The key is also used to store a new value in the dictionary, when the <paramref name="valueNeededCallback">callback</paramref>
+            method is used to store a new value in the dictionary.</param>
+            <param name="valueNeededCallback">A callback that is used to store a new value in the dictionary. The callback is used when the dictionary does not contain an entry with the given
+            key.</param>
+            <returns>
+            The method will return the entry value if an entry with the given key <paramref name="key"/> was found in the dictionary. If <paramref name="valueNeededCallback"/> is not <c>null</c>, the
+            return value of this callback is returned by this method.
+            </returns>
+            <remarks>
+            <para>
+            The method uses the <paramref name="valueNeededCallback"/> if specified and if the <paramref name="key"/> has no corresponding entry in the dictionary. In this case the result of the callback
+            is added to the dictionary using the given key. After that the result value of the callback is returned by this method.
+            </para>
+            <para>
+            However if the entry in the dictionary exists, but the value is equal to the default value of <typeparamref name="TValue"/>, it will be returned without calling <paramref name="valueNeededCallback"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Cascade.EnumerableExtensions">
+            <summary>
+            The static <i>EnumerableExtensions</i> class contains extension methods which are used for types implementing the <see cref="T:System.Collections.IEnumerable"/> interface.
+            </summary>
+        </member>
+        <member name="M:Cascade.EnumerableExtensions.ForEach(System.Collections.IEnumerable,System.Action{System.Object})">
+            <summary>
+            This method iterates over an enumeration and using a callback for each item in the enumeration.
+            </summary>
+            <param name="targetValues">An enumeration to iterate over.</param>
+            <param name="callback">A callback which is called for each item which is returned when iterating over <paramref name="targetValues"/>.</param>
+        </member>
+        <member name="M:Cascade.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            This method itererates over an enumeration and using a callback for each item in the enumeration.
+            </summary>
+            <typeparam name="T">The type parameter of the items in the enumeration.</typeparam>
+            <param name="targetValues">An enumeration to iterate over.</param>
+            <param name="callback">A callback which is called for each item which is returned when iterating over <paramref name="targetValues"/>.</param>
+        </member>
+        <member name="M:Cascade.EnumerableExtensions.Cast``2(System.Collections.Generic.IEnumerable{``0},System.Converter{``0,``1})">
+            <summary>
+            This method iterates over an enumeration and use for each item the <paramref name="castCallback"/> to return an enumeration of a different type.
+            </summary>
+            <typeparam name="TInput">The type parameter of the items in the input values enumeration.</typeparam>
+            <typeparam name="TOutput">The type parameter of the items returned by this method.</typeparam>
+            <param name="inputValues">An enumeration of items that should be casted.</param>
+            <param name="castCallback">A callback that is called for each item in <paramref name="inputValues"/>. The input value is passed as a parameter to the callback. The callback returns a casted or converted value.</param>
+            <returns>
+            Returns an enumeration of <typeparamref name="TOutput"/>. The enumeration is empty if either <paramref name="inputValues"/> is empty or <c>null</c>, or <paramref name="castCallback"/> is <c>null</c>.
+            </returns>
+        </member>
+        <member name="T:Cascade.ObjectExtensions">
+            <summary>
+            The static <i>ObjectExtensions</i> class contains extension methods usable on all types.
+            </summary>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.To``1(System.Object)">
+            <summary>
+            The method performs a static cast.
+            </summary>
+            <typeparam name="T">Result type of the static cast.</typeparam>
+            <param name="target">Target of the static cast.</param>
+            <returns>
+            Returns a value of type <typeparamref name="T"/> or raises exceptions if the static cast can not be applied.
+            </returns>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.As``1(System.Object)">
+            <summary>
+            The method performs a dynamic cast.
+            </summary>
+            <typeparam name="T">Result type of the dynamic cast.</typeparam>
+            <param name="target">Target of the dynamic cast.</param>
+            <returns>
+            Returns either a value of type <typeparamref name="T"/> if the dynamic cast was performed successful or the default value of <typeparamref name="T"/> if <paramref name="target"/>
+            is not of type <typeparamref name="T"/>.
+            </returns>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.IsNull(System.Object)">
+            <summary>
+            The method checks wether the value is <c>null</c>.
+            </summary>
+            <param name="target">Target of the check.</param>
+            <returns>
+            Returns <c>true</c> if <paramref name="target"/> is <c>null</c>, otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})">
+            <summary>
+            The method performs a static cast on the object and returns the value in a given type.
+            </summary>
+            <typeparam name="T">Result type of the static cast.</typeparam>
+            <param name="target">Target of the static cast.</param>
+            <param name="castCallback">A callback used if <paramref name="target"/> is not already of type <typeparamref name="T"/>.</param>
+            <returns>
+            Returns either a value of type <typeparamref name="T"/> or the default value of <typeparamref name="T"/> if returned by <paramref name="castCallback"/>.
+            </returns>
+            <exception cref="T:System.InvalidCastException">Is raised when <paramref name="target"/> is <c>null</c> or the value is not of type <typeparamref name="T"/> and <paramref name="castCallback"/>
+            is <c>null</c>.</exception>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})">
+            <summary>
+            The method performs a dynamic cast on the object and returns the value in a given type.
+            </summary>
+            <typeparam name="T">Result type of the dynamic cast.</typeparam>
+            <param name="target">Target of the dynamic cast.</param>
+            <param name="castCallback">A callback used if <paramref name="target"/> is not of type <typeparamref name="T"/> and if <paramref name="target"/> is not <c>null</c>.</param>
+            <returns>
+            Returns either a value of type <typeparamref name="T"/> or the default value of <typeparamref name="T"/> if <paramref name="target"/> is not of type <typeparamref name="T"/>,
+            is <c>null</c> or if <paramref name="castCallback"/> is null.
+            </returns>
+            <remarks>
+            The method performs exactly like <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/>, but do not raise exceptions if <paramref name="target"/> is <c>null</c> or not of the type <typeparamref name="T"/>. In addition
+            any <see cref="T:System.FormatException"/>, <see cref="T:System.InvalidCastException"/> and <see cref="T:System.OverflowException"/> is catched by this method and the default value of <typeparamref name="T"/> is
+            returned instead.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToBoolean(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Boolean"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Boolean"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToBoolean(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToBoolean(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Boolean"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToBoolean(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Boolean"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToBoolean(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToByte(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Byte"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Byte"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToByte(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToByte(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Byte"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToByte(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Byte"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToByte(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToSByte(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.SByte"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.SByte"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSByte(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToSByte(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.SByte"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToSByte(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.SByte"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSByte(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToChar(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Char"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Char"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToChar(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToChar(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Char"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToChar(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Char"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToChar(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToDateTime(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.DateTime"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDateTime(System.Object)"/>. If the value is
+            a non-negative integer number, a new <see cref="T:System.DateTime"/> is created, using the numeric value as <see cref="P:System.DateTime.Ticks"/> for the date time.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToDateTime(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDateTime(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.DateTime"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDateTime(System.Object,System.IFormatProvider)"/>. If the value is
+            a non-negative integer number, a new <see cref="T:System.DateTime"/> is created, using the numeric value as <see cref="P:System.DateTime.Ticks"/> for the date time.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToTimeSpan(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.TimeSpan"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.TimeSpan.Parse(System.String)"/> as there is no
+            <c>System.Convert.ToTimeSpan</c>. If the value is an integer value, a new <see cref="T:System.TimeSpan"/> is created using the numeric value
+            as <see cref="P:System.TimeSpan.Ticks"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToDecimal(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Decimal"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Decimal"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDecimal(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToDecimal(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Decimal"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDecimal(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Decimal"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDecimal(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToDouble(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Double"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Double"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDouble(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToDouble(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Double"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDouble(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Double"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDouble(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToSingle(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Single"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Single"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSingle(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToSingle(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Single"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToSingle(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Single"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSingle(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToInt16(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Int16"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Int16"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt16(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToInt16(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Int16"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt16(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Int16"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt16(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToUInt16(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.UInt16"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.UInt16"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt16(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToUInt16(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.UInt16"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt16(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.UInt16"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt16(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToInt32(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Int32"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt32(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToInt32(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt32(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Int32"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt32(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToUInt32(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.UInt32"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt32(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToUInt32(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt32(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.UInt32"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt32(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToInt64(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Int64"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt64(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToInt64(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt64(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Int64"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt64(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToUInt64(System.Object)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.UInt64"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.UInt64"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt64(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.ToUInt64(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a static cast to <see cref="T:System.UInt64"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt64(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.UInt64"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.StaticCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt64(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsBoolean(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToBoolean(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsBoolean(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToBoolean(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToBoolean(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsByte(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToByte(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsByte(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToByte(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToByte(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsSByte(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSByte(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsSByte(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToSByte(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSByte(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsChar(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToChar(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsChar(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToChar(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToChar(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsDateTime(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDateTime(System.Object)"/>. If the value is
+            a non-negative integer number, a new <see cref="T:System.DateTime"/> is created, using the numeric value as <see cref="P:System.DateTime.Ticks"/> for the date time.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsDateTime(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDateTime(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDateTime(System.Object,System.IFormatProvider)"/>. If the value is
+            a non-negative integer number, a new <see cref="T:System.DateTime"/> is created, using the numeric value as <see cref="P:System.DateTime.Ticks"/> for the date time.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsTimeSpan(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.TimeSpan.Parse(System.String)"/> as there is no
+            <c>System.Convert.ToTimeSpan</c>. If the value is an integer value, a new <see cref="T:System.TimeSpan"/> is created using the numeric value
+            as <see cref="P:System.TimeSpan.Ticks"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsDecimal(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDecimal(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsDecimal(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDecimal(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDecimal(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsDouble(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDouble(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsDouble(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToDouble(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToDouble(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsSingle(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSingle(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsSingle(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToSingle(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToSingle(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsInt16(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt16(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsInt16(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt16(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt16(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsUInt16(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt16(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsUInt16(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt16(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt16(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsInt32(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt32(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsInt32(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt32(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt32(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsUInt32(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt32(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsUInt32(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt32(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt32(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsInt64(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt64(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsInt64(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToInt64(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToInt64(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsUInt64(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt64(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsUInt64(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.Nullable`1"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToUInt64(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.Nullable`1"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToUInt64(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsString(System.Object)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.String"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <returns>
+            Returns a <see cref="T:System.String"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToString(System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Cascade.ObjectExtensions.AsString(System.Object,System.IFormatProvider)">
+            <summary>
+            The method performs a dynamic cast to <see cref="T:System.String"/>.
+            </summary>
+            <param name="target">Target of the cast.</param>
+            <param name="provider">The format provider used for the <see cref="M:System.Convert.ToString(System.Object,System.IFormatProvider)"/>.</param>
+            <returns>
+            Returns a <see cref="T:System.String"/> value.
+            </returns>
+            <remarks>
+            The method uses the <see cref="M:Cascade.ObjectExtensions.DynamicCast``1(System.Object,System.Func{System.Object,``0})"/> extension method in combination with <see cref="M:System.Convert.ToString(System.Object,System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="T:Cascade.StructExtensions">
+            <summary>
+            The static <i>StructExtensions</i> class contains extension methods which are used for structures.
+            </summary>
+        </member>
+        <member name="F:Cascade.StructExtensions.IntegralTypes">
+            <summary>
+            Array of all integral types which are supported by the HasFlag extension and are usable as underlaying types for enums. Types with even index in the array are unsigned
+            value types, types with uneven index are signed value types.
+            </summary>
+        </member>
+        <member name="M:Cascade.StructExtensions.IfNotNull``1(System.Nullable{``0},System.Action{System.Nullable{``0}})">
+            <summary>
+            This method performs an action if the nullable structure value is not <c>null</c>.
+            </summary>
+            <typeparam name="T">The type parameter for the nullable type.</typeparam>
+            <param name="target">The target value.</param>
+            <param name="callback">A callback which is called when <paramref name="target"/> is not <c>null</c>.</param>
+        </member>
+        <member name="M:Cascade.StructExtensions.IfNotNull``2(System.Nullable{``0},System.Func{System.Nullable{``0},``1})">
+            <summary>
+            This method performs an action if the nullable structure value is not <c>null</c> and returns the result value of that action.
+            </summary>
+            <typeparam name="TTarget">The type parameter for the nullable type.</typeparam>
+            <typeparam name="TResult">The type parameter of the result of the callback.</typeparam>
+            <param name="target">The target value.</param>
+            <param name="callback">A callback which is used when <paramref name="target"/> is not <c>null</c>.</param>
+            <returns>
+            Returns either <c>null</c> if the <paramref name="callback"/> is <c>null</c>, the <paramref name="target"/> is <c>null</c>, or the result value of <paramref name="callback"/>.
+            </returns>
+        </member>
+        <member name="M:Cascade.StructExtensions.IfNull``1(System.Nullable{``0},System.Action)">
+            <summary>
+            This method performs an action if the nullable structure value is <c>null</c>.
+            </summary>
+            <typeparam name="T">The type parameter for the nullable type.</typeparam>
+            <param name="target">The target value.</param>
+            <param name="callback">A callback which is called when <paramref name="target"/> is <c>null</c>.</param>
+        </member>
+        <member name="M:Cascade.StructExtensions.IfNull``2(System.Nullable{``0},System.Func{``1})">
+            <summary>
+            This method performs an action if the nullable structure value is <c>null</c> and returns the result value of that action.
+            </summary>
+            <typeparam name="TTarget">The type parameter for the nullable type.</typeparam>
+            <typeparam name="TResult">The type parameter of the result of the callback.</typeparam>
+            <param name="target">The target value.</param>
+            <param name="callback">A callback which is used when <paramref name="target"/> is <c>null</c>.</param>
+            <returns>
+            Returns either <c>null</c> if the <paramref name="callback"/> is <c>null</c>, the <paramref name="target"/> is not <c>null</c>, or the result value of <paramref name="callback"/>.
+            </returns>
+        </member>
+        <member name="M:Cascade.StructExtensions.HasFlag``1(``0,``0)">
+            <summary>
+            This method checks wether a flag is set. This method can be used on enums or integral value types except <see cref="T:System.Char"/>.
+            </summary>
+            <typeparam name="T">The type parameter of the checked type.</typeparam>
+            <param name="target">Target value to check wether it has the flag or not.</param>
+            <param name="value">The value of the flag to check.</param>
+            <returns>
+            Returns <c>true</c> if the <paramref name="value"/> is present in <paramref name="target"/>, otherwise <c>false</c>.
+            </returns>
+            <remarks>
+            <para>
+            If the method is used on structs which are not integral value types or are <see cref="T:System.Char">chars</see>, the method will always return <c>false</c>.
+            </para>
+            <para>
+            This method can even evaluate flag values on integral types which are not enums.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Cascade.GenericExtensions">
+            <summary>
+            The static <i>GenericExtensions</i> class contains extension methods which can be applied to a wide number of objects or structures, because the target types are generic and does not
+            having any concrete type constraints (beside <i>class</i> or <i>new</i>).
+            </summary>
+        </member>
+        <member name="M:Cascade.GenericExtensions.Invoke``1(``0,System.Action{``0}[])">
+            <summary>
+            The method invokes multiple function calls which is executed in a sequence.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object instanc.</param>
+            <param name="callbacks">No, one or more callbacks which are called in order.</param>
+            <remarks>
+            <para>
+            The extension can be usefull if multiple calls on an object instance are needed. The callbacks having the object as first argument, thus
+            you are working on the same instance / value in all callbacks. But please not that assigning the argument to a new value inside a callback has no
+            effect on the value of the object itself. If you need to assigne a new value inside the callbacks, you should use an other overload of Invoke.
+            </para>
+            <example>
+            <code>
+            interface IAnimal
+            {
+                void Feed();
+                void Walk();
+            }
+            
+            public static void Main()
+            {
+                IAnimal myPet = null;
+            
+                myPet.Invoke(t => t.Feed(), t => t.Walk());
+            }
+            </code>
+            </example>
+            </remarks>
+        </member>
+        <member name="M:Cascade.GenericExtensions.Invoke``1(``0,System.Func{``0,``0}[])">
+            <summary>
+            The method invokes multiple function calls which is executed in a sequence.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object instanc.e</param>
+            <param name="callbacks">No, one or more callbacks which are called in order.</param>
+            <remarks>
+            <para>
+            The extension can be usefull if multiple calls on an object instance are needed. The callbacks having the result of the previous
+            callback passed in as the first argument. In case of the first callback the object / value itself is passed to the callback.
+            You can use this Invoke overload to create new values and using them in subsequent invokes.
+            </para>
+            <example>
+            <code>
+            public static void Main()
+            {
+                int value = 1;
+            
+                value = value.Invoke(t => { return t + 1; }, t => { return t * 4; }, t => { return t / 2; }); // 8
+            }
+            }
+            </code>
+            </example>
+            </remarks>
+        </member>
+        <member name="M:Cascade.GenericExtensions.GetValueOrNew``1(``0)">
+            <summary>
+            The methods gets the current value or a new value if the current value is <c>null</c>.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object.</param>
+            <returns>
+            Returns either the value of the object if it's not <c>null</c> or a newly created value of the target type.
+            </returns>
+        </member>
+        <member name="M:Cascade.GenericExtensions.GetValueOrDefault``1(``0,``0)">
+            <summary>
+            The method gets either the value of this object or the <paramref name="defaultValue"/> if this object instance is <c>null</c>.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>
+            The method returns the object itself if it is not <c>null</c>. If the object instance is <c>null</c> the value of <paramref name="defaultValue"/> will be returned.
+            </returns>
+            <remarks>
+            <para>
+            This method can be used instead of the null-coalescing operator (if existing in your .NET language, like the <i>??</i> operator in <i>C#</i>).
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Cascade.GenericExtensions.GetValueOrDefault``1(``0,System.Object)">
+            <summary>
+            The method gets either the value of this object or the <paramref name="defaultValue"/> if this object instance is <c>null</c>.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>
+            The method returns the object itself if it is not <c>null</c>. If the object is <c>null</c> <paramref name="defaultValue"/> is returned.
+            </returns>
+            <remarks>
+            <para>
+            In difference to the <see cref="M:Cascade.GenericExtensions.GetValueOrDefault``1(``0,``0)"/> overload, this overload will accept any value as default value and return it. So you can
+            return default value which are not of <typeparamref name="T"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Cascade.GenericExtensions.IfNotNull``1(``0,System.Action{``0})">
+            <summary>
+            The method will perform an action when the object instance is not <c>null</c>.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="callback">A callback which is executed if <paramref name="target"/> is not <c>null</c>.</param>
+        </member>
+        <member name="M:Cascade.GenericExtensions.IfNotNull``2(``0,System.Func{``0,``1})">
+            <summary>
+            The method will perform an action and returning its result when the object instance is not <c>null</c>.
+            </summary>
+            <typeparam name="TTarget">Type parameter for the target object.</typeparam>
+            <typeparam name="TResult">Type parameter for the result value of the callback.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="callback">A callback which is executed if <paramref name="target"/> is not <c>null</c>.</param>
+            <returns>
+            Returns either <c>null</c> if <paramref name="target"/> is <c>null</c> or the return value of <paramref name="callback"/>. Returns <c>null</c>
+            if <paramref name="callback"/> is <c>null</c>.
+            </returns>
+            <remarks>
+            This method can be used together with the <see cref="M:Cascade.GenericExtensions.IfNull``2(``0,System.Func{``1})"/> extensions to chain the calls to something like:
+            <example>
+            <code>
+            static void Main()
+            {
+                object target = null;
+                object result = null;
+                result = target.IfNotNull(t =&gt; { return t; }).IfNull(() =&gt; { return new object(); }); // result is new object()
+            }
+            </code>
+            </example>
+            </remarks>
+        </member>
+        <member name="M:Cascade.GenericExtensions.IfNull``1(``0,System.Action)">
+            <summary>
+            The method will perform an action when the object instance is <c>null</c>.
+            </summary>
+            <typeparam name="T">Type parameter for the target object.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="callback">A callback which is executed if <paramref name="target"/> is <c>null</c>.</param>
+        </member>
+        <member name="M:Cascade.GenericExtensions.IfNull``2(``0,System.Func{``1})">
+            <summary>
+            The method will perform an action and returning its result when the object instance not <c>null</c>.
+            </summary>
+            <typeparam name="TTarget">Type parameter for the target object.</typeparam>
+            <typeparam name="TResult">Type parameter for the result value of the callback.</typeparam>
+            <param name="target">The target object instance.</param>
+            <param name="callback">A callback which is executed if <paramref name="target"/> not <c>null</c>.</param>
+            <returns>
+            Returns either <c>null</c> if <paramref name="target"/> is not <c>null</c> or the return value of <paramref name="callback"/>. Returns <c>null</c>
+            if <paramref name="callback"/> is <c>null</c>.
+            </returns>
+            <remarks>
+            This method can be used together with the <see cref="M:Cascade.GenericExtensions.IfNotNull``2(``0,System.Func{``0,``1})"/> extensions to chain the calls to something like:
+            <example>
+            <code>
+            static void Main()
+            {
+                object target = null;
+                object result = null;
+                result = target.IfNotNull(t =&gt; { return t; }).IfNull(() =&gt; { return new object(); }); // result is new object()
+            }
+            </code>
+            </example>
+            </remarks>
+        </member>
+    </members>
+</doc>
